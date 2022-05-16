@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Buscador from "./componenetes/Buscador";
-import Resultado from './componenetes/Resulatdo';
+import Resultado from './componenetes/Resultado';
 
 class App extends Component {
 
@@ -79,25 +79,25 @@ class App extends Component {
 
 
   render() {
-    return (<div className="container">
-      <div className="jumbotron">
-        <p className="lead text-center">Buscador de Imagenes</p>
+    return (
+      <div className="container">
+        <div className="jumbotron">
+          <p className="lead text-center">Buscador de Imagenes</p>
 
-        <Buscador
-          datosBusqueda={this.datosBusqueda}
-        />
+          <Buscador
+            datosBusqueda={this.datosBusqueda}
+          />
+        </div>
+        <div className='row justify-content-center'>
+          <Resultado
+            imagenes={this.state.imagenes}
+            paginaAnterior={this.paginaAnterior}
+            paginaSiguiente={this.paginaSiguiente}
+          />
+        </div>
+
+
       </div>
-      <div className='row justify-content-center'>
-        <Resultado
-          imagenes={this.state.imagenes}
-          paginaAnterior={this.paginaAnterior}
-          paginaSiguiente={this.paginaSiguiente}
-        />
-
-      </div>
-
-
-    </div>
     );
   }
 }
